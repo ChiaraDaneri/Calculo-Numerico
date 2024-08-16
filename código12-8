@@ -1,0 +1,22 @@
+students = [
+    {"nombre": "Facundo", "notas": ["A+", "C", "A++", "B+"]},
+    {"nombre": "Teo", "notas": [10, 87, 39, 100]},
+    {"nombre": "Guillermina", "notas": [-45, -87, -34, -57]},
+     {"nombre": "Marcelo", "notas": [ ]}
+]
+
+for i in students:
+  suma=0
+  k=0
+  for j in i["notas"]:
+    if type(j)==int and j>=0 and j<=100:
+      suma+=j
+
+    else:
+      k+=1
+      print(i["nombre"], "Tiene una nota inválida:", j)
+
+  if k==len(i["notas"]):
+    print(i["nombre"], "No tiene notas válidas")
+  else:
+    print(i["nombre"], "Su promedio es:", suma/(len(i["notas"])-k))
